@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>VSP Building & Interior Projects Company Ltd — Costing & Quote Calculator</title>
+<style>
+:root{--bg:#f4f4f2;--card:#fff;--ink:#161616;--muted:#6c6c67;--line:#deded8;--accent:#111;--soft:#ecece7;--ok:#147a43;--warn:#a35b00;--bad:#a72f2f;--r:16px;--shadow:0 5px 18px rgba(0,0,0,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.4}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:1020px;margin:auto;padding:0 12px 92px}.topbar{position:sticky;top:0;z-index:20;background:rgba(244,244,242,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin:0 -12px;padding:8px 12px}.topline{display:flex;align-items:center;gap:10px}.brand{font-weight:800;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.spacer{flex:1}.pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 10px;font-size:13px}.tabs{display:flex;gap:6px;margin-top:8px;overflow:auto;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}.tab{border:0;background:transparent;color:var(--muted);padding:7px 10px;border-radius:999px;white-space:nowrap}.tab.active{background:var(--ink);color:white}.page{display:none;padding-top:14px}.page.active{display:block}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}h1,h2,h3,p{margin-top:0}h1{font-size:22px;margin-bottom:5px}h2{font-size:18px;margin-bottom:12px}h3{font-size:15px;margin-bottom:8px}.sub{color:var(--muted);font-size:14px}.grid{display:grid;gap:12px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.field label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}.field input,.field select,.field textarea{width:100%;min-height:46px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#fff;color:var(--ink);outline:none}.field textarea{min-height:86px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:#777;box-shadow:0 0 0 3px rgba(0,0,0,.05)}.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.seg button{min-height:44px;border:1px solid var(--line);background:#fff;border-radius:11px;padding:8px}.seg button.active{background:var(--ink);color:#fff;border-color:var(--ink)}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px;font-size:14px}.chip input{accent-color:#111}.btn{border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:12px;min-height:44px;padding:9px 13px;font-weight:700}.btn.secondary{background:#fff;color:var(--ink);border-color:var(--line)}.btn.ghost{background:transparent;color:var(--ink);border-color:transparent}.btn.danger{background:#fff;color:var(--bad);border-color:#efc3c3}.actions{display:flex;flex-wrap:wrap;gap:8px}.notice{border-left:4px solid var(--warn);background:#fff7e8;padding:11px 12px;border-radius:10px;font-size:13px;color:#66400f}.oknote{border-left-color:var(--ok);background:#eefaf3;color:#155a35}.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.kpi{border:1px solid var(--line);border-radius:13px;padding:11px;background:#fafaf8;min-width:0}.kpi .v{font-weight:850;font-size:20px;overflow-wrap:anywhere}.kpi .l{font-size:12px;color:var(--muted);margin-top:3px}.work-item{border:1px solid var(--line);border-radius:14px;padding:13px;margin-top:10px;background:#fff}.work-head{display:flex;align-items:flex-start;gap:10px}.work-head .grow{flex:1;min-width:0}.work-title{font-weight:800}.work-meta{color:var(--muted);font-size:13px}.work-total{text-align:right;font-weight:800;white-space:nowrap}.price-override{border-top:1px solid var(--line);margin-top:10px;padding-top:10px}.price-override .field input{min-height:42px}.override-note{font-size:12px;color:var(--muted);margin-top:5px}.mini{font-size:12px;color:var(--muted)}.row{display:flex;gap:8px;align-items:center}.grow{flex:1}.divider{height:1px;background:var(--line);margin:14px 0}.quote-paper{background:white;border:1px solid var(--line);border-radius:14px;padding:20px}.quote-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}.quote-detail-card{border:1px solid #ddd;border-radius:12px;padding:12px;background:#fff}.quote-detail-card h3{margin-bottom:5px}.quote-detail-card .qtable{font-size:12px}.quote-detail-card .qtable th,.quote-detail-card .qtable td{padding:7px 5px}.quote-detail-card tfoot td{border-top:2px solid #111;font-weight:800}.quote-price-line{display:flex;justify-content:space-between;gap:12px;border-top:2px solid #111;margin-top:10px;padding-top:9px;font-weight:800}.quote-head{display:flex;justify-content:space-between;gap:18px;border-bottom:2px solid #111;padding-bottom:14px;margin-bottom:14px}.quote-title{font-size:26px;font-weight:900}.quote-meta{text-align:right;font-size:13px;color:#444}.qclient{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}.qtable{width:100%;border-collapse:collapse;font-size:14px}.qtable th,.qtable td{border-bottom:1px solid #ddd;padding:9px 7px;vertical-align:top}.qtable th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.04em}.num{text-align:right;white-space:nowrap}.qsum{margin-left:auto;max-width:360px;margin-top:14px}.qsum>div{display:flex;justify-content:space-between;gap:12px;padding:5px 0}.qsum .grand{border-top:2px solid #111;margin-top:5px;padding-top:9px;font-size:19px;font-weight:900}.terms{margin-top:20px;font-size:12px;color:#444}.terms ul{padding-left:18px}.badge{display:inline-block;border-radius:999px;padding:3px 7px;font-size:11px;font-weight:700;background:#eee}.badge.ok{background:#e7f7ed;color:#146a3c}.badge.warn{background:#fff0d8;color:#8c5000}.badge.user{background:#eaf0ff;color:#34508b}.mat-row,.recipe-row{display:grid;grid-template-columns:1.3fr .8fr .7fr .8fr auto;gap:7px;align-items:end;border-top:1px solid var(--line);padding:10px 0}.mat-row:first-child,.recipe-row:first-child{border-top:0}.mat-row input,.mat-row select,.recipe-row input,.recipe-row select{width:100%;min-height:40px;border:1px solid var(--line);border-radius:9px;padding:7px 8px}.mat-list{overflow:hidden}.material-table{width:100%;border-collapse:collapse;font-size:13px}.material-table th,.material-table td{padding:8px;border-bottom:1px solid var(--line);text-align:left}.material-table .num{text-align:right}.bar{height:8px;background:#e5e5e0;border-radius:99px;overflow:hidden}.bar>span{display:block;height:100%;background:#333;border-radius:99px}.status{font-size:12px;color:var(--muted)}details.setting{border:1px solid var(--line);border-radius:12px;margin-top:9px;background:#fff}details.setting summary{list-style:none;padding:12px 13px;font-weight:750;cursor:pointer}details.setting summary::-webkit-details-marker{display:none}details.setting[open] summary{border-bottom:1px solid var(--line)}.setting-body{padding:12px 13px}.small-input{max-width:130px}.bottomnav{display:none}.plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.plan-thumb{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fafaf8}.plan-thumb img{display:block;width:100%;height:180px;object-fit:contain;background:#eee}.plan-thumb button{position:absolute;right:6px;top:6px;border:0;border-radius:99px;background:#fff;padding:5px 8px}.empty{padding:18px;border:1px dashed #bbb;border-radius:12px;text-align:center;color:var(--muted)}.danger-text{color:var(--bad)}.right{text-align:right}.hidden{display:none!important}
+@media(max-width:720px){.quote-detail-grid{grid-template-columns:1fr}.app{padding-left:10px;padding-right:10px}.topbar{margin-left:-10px;margin-right:-10px}.tabs{display:none}.g2,.g3{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.qclient{grid-template-columns:1fr}.quote-head{display:block}.quote-meta{text-align:left;margin-top:8px}.quote-paper{padding:14px}.qtable{font-size:12px}.qtable th,.qtable td{padding:7px 4px}.hide-mobile{display:none}.mat-row,.recipe-row{grid-template-columns:1fr 1fr}.mat-row .span2,.recipe-row .span2{grid-column:1/-1}.bottomnav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:7px 7px calc(7px + env(safe-area-inset-bottom))}.bottomnav button{border:0;background:transparent;padding:8px 3px;font-size:12px;color:var(--muted)}.bottomnav button.active{color:#111;font-weight:800}.bottomnav b{display:block;font-size:17px;line-height:1}.topline .pill{display:none}}
+@media(max-width:720px){.plan-grid{grid-template-columns:1fr 1fr}.plan-thumb img{height:140px}}
+@media print{body{background:#fff}.topbar,.bottomnav,#calcPage,#settingsPage,#savedPage,.no-print{display:none!important}.app{max-width:none;padding:0}.page{display:none!important}.page#printPage{display:block!important;padding:0}.quote-paper{border:0;box-shadow:none;padding:0}.quote-title{font-size:28px}.quote-paper a{color:#000;text-decoration:none}}
+</style>
+
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#111111">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="VSP Calculator">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+<div class="app">
+  <header class="topbar no-print">
+    <div class="topline"><div class="brand">VSP Building & Interior Projects Company Ltd · Costing & Quote</div><div class="spacer"></div><span id="saveState" class="pill">Saved locally</span></div>
+    <nav class="tabs">
+      <button class="tab active" data-page="calcPage">Calculator</button>
+      <button class="tab" data-page="printPage">Quote</button>
+      <button class="tab" data-page="plansPage">Plans</button>
+      <button class="tab" data-page="savedPage">Saved</button>
+      <button class="tab" data-page="settingsPage">Settings</button>
+    </nav>
+  </header>
+
+  <main id="calcPage" class="page active">
+    <section class="card">
+      <h1>New quote</h1><p class="sub">Price the job internally first. The customer quote is generated from the result.</p>
+      <div class="grid g2">
+        <div class="field"><label>Client / project name</label><input id="clientName" placeholder="e.g. Mr Ram / Living room ceiling"></div>
+        <div class="field"><label>Phone</label><input id="clientPhone" inputmode="tel" placeholder="Optional"></div>
+        <div class="field"><label>Site / locality</label><input id="site" placeholder="e.g. Pamplemousses"></div>
+        <div class="field"><label>Quote reference</label><input id="quoteRef"></div>
+      </div>
+      <div class="field" style="margin-top:12px"><label>Pricing mode</label><div class="seg" id="pricingMode">
+        <button type="button" data-mode="labour">Labour only</button>
+        <button type="button" data-mode="supply" class="active">Supply + install</button>
+        <button type="button" data-mode="design">Design + supply</button>
+      </div></div>
+    </section>
+
+    <section class="card">
+      <div class="row"><div class="grow"><h2 style="margin:0">Work items</h2><div class="sub">Add the parts of the job. Presets calculate material and labour from your settings.</div></div><button type="button" class="btn" id="addWorkBtn">+ Add</button></div>
+      <div id="workItems"></div>
+    </section>
+
+    <section class="card">
+      <h2>Job conditions</h2>
+      <div class="grid g2">
+        <div class="field"><label>Geometry / design complexity</label><select id="geometry"><option value="1">Straight / standard</option><option value="1.25">Multiple levels / steps</option><option value="1.5">Custom design / pattern</option></select></div>
+        <div class="field"><label>Finish</label><select id="finish"><option value="0.9">Basic jointing</option><option value="1" selected>Standard paint-ready</option><option value="1.25">Premium smooth finish</option><option value="1.5">Critical lighting / LED grazing</option></select></div>
+      </div>
+      <div class="field" style="margin-top:12px"><label>Site factors</label><div class="chips">
+        <label class="chip"><input type="checkbox" data-site="0.10"> Occupied house</label>
+        <label class="chip"><input type="checkbox" data-site="0.10"> Furniture / protection</label>
+        <label class="chip"><input type="checkbox" data-site="0.20"> High ceiling / scaffold</label>
+        <label class="chip"><input type="checkbox" data-site="0.10"> Long carry</label>
+      </div></div>
+      <div class="grid g3" style="margin-top:12px">
+        <div class="field"><label>Board waste %</label><input id="boardWaste" type="number" min="0" max="50" step="1"></div>
+        <div class="field"><label>Framing waste %</label><input id="frameWaste" type="number" min="0" max="50" step="1"></div>
+        <div class="field"><label>Other material waste %</label><input id="otherWaste" type="number" min="0" max="50" step="1" value="5"></div>
+      </div>
+      <div id="conditionHint" class="mini" style="margin-top:8px"></div>
+    </section>
+
+    <section class="card">
+      <h2>Job extras</h2>
+      <div class="grid g3">
+        <div class="field"><label>Transport / delivery (Rs)</label><input id="transport" type="number" min="0" step="50" value="0"></div>
+        <div class="field"><label>Design fee (Rs)</label><input id="designFee" type="number" min="0" step="50" value="0"></div>
+        <div class="field"><label>Other direct cost (Rs)</label><input id="otherCost" type="number" min="0" step="50" value="0"></div>
+      </div>
+      <div class="grid g2" style="margin-top:12px">
+        <label class="chip"><input id="useHelper" type="checkbox"> Use helper</label>
+        <div class="field"><label>Helper days</label><input id="helperDays" type="number" min="0" step="0.5" value="0"></div>
+      </div>
+      <div class="field" style="margin-top:12px"><label>Internal notes</label><textarea id="internalNotes" placeholder="Anything affecting your cost or installation..."></textarea></div>
+    </section>
+
+    <section class="card">
+      <h2>Commercial discount</h2>
+      <div class="sub">Optional. Apply a discount before generating the final customer quotation.</div>
+      <div class="grid g3" style="margin-top:12px">
+        <div class="field"><label>Discount type</label><select id="discountType"><option value="percent">Percentage (%)</option><option value="amount">Fixed amount (Rs)</option></select></div>
+        <div class="field"><label>Discount</label><input id="discountValue" type="number" min="0" step="50" value="0" placeholder="0"></div>
+        <div class="field"><label>Description shown on quote</label><input id="discountDescription" placeholder="e.g. Commercial gesture / repeat client"></div>
+      </div>
+      <div id="discountPreview" class="mini" style="margin-top:10px"></div>
+    </section>
+
+    <section class="card" id="resultsCard">
+      <div class="row"><div class="grow"><h2 style="margin:0">Internal costing</h2><div class="sub">Not shown to the client.</div></div><span id="marginBadge" class="badge"></span></div>
+      <div class="kpis" style="margin-top:12px">
+        <div class="kpi"><div id="kMaterial" class="v">Rs 0</div><div class="l">Materials charged</div></div>
+        <div class="kpi"><div id="kLabour" class="v">Rs 0</div><div class="l">Labour cost</div></div>
+        <div class="kpi"><div id="kHours" class="v">0 h</div><div class="l">Estimated work</div></div>
+        <div class="kpi"><div id="kSell" class="v">Rs 0</div><div class="l">Quote total</div></div>
+      </div>
+      <div class="divider"></div>
+      <div id="costBreakdown"></div>
+      <div class="divider"></div>
+      <div class="notice" style="margin-bottom:12px" id="discountInternalNotice"></div>
+      <h3>Material shopping list</h3>
+      <div id="materialSchedule"></div>
+      <div class="actions" style="margin-top:14px">
+        <button type="button" class="btn" id="viewQuoteBtn">View customer quote</button>
+        <button type="button" class="btn secondary" id="saveQuoteBtn">Save quote</button>
+      </div>
+    </section>
+  </main>
+
+  <main id="printPage" class="page">
+    <section class="no-print card">
+      <div class="actions"><button type="button" class="btn" id="printBtn">Print / Save PDF</button><button type="button" class="btn secondary" id="copyQuoteBtn">Copy WhatsApp summary</button><button type="button" class="btn secondary" id="exportQuoteBtn">Export quote JSON</button><button type="button" class="btn secondary" id="exportMaterialsBtn">Export material CSV</button></div>
+    </section>
+    <article class="quote-paper" id="quotePaper"></article>
+  </main>
+
+  <main id="plansPage" class="page">
+    <section class="card">
+      <h1>Plan / photos assistant</h1>
+      <p class="sub">Upload one or several photos of plans, sketches or site measurements. The photos stay with the current quote.</p>
+      <div class="actions">
+        <button type="button" class="btn" id="planUploadBtn">+ Add plan photos</button>
+        <input id="planFiles" type="file" accept="image/*" multiple class="hidden">
+        <button type="button" class="btn secondary" id="clearPlansBtn">Clear photos</button>
+      </div>
+      <div id="planPreview" class="plan-grid" style="margin-top:12px"></div>
+      <div class="notice" style="margin-top:12px">For accurate quantities, use a plan with a visible scale or at least one known dimension. The assistant proposes measurements; you validate them before pricing.</div>
+    </section>
+
+    <section class="card">
+      <h2>Quick measurement sheet</h2>
+      <div class="grid g3">
+        <div class="field"><label>Scale / known dimension (m)</label><input id="planKnownDim" type="number" min="0" step="0.01" placeholder="e.g. 3.50"></div>
+        <div class="field"><label>Plan reference</label><input id="planRef" placeholder="e.g. Ground floor ceiling"></div>
+        <div class="field"><label>Measurement confidence</label><select id="planConfidence"><option value="high">High — dimension visible</option><option value="medium" selected>Medium — readable sketch</option><option value="low">Low — photo / estimate</option></select></div>
+      </div>
+      <div class="grid g2" style="margin-top:12px">
+        <div class="field"><label>Wall length (m)</label><input id="planWallL" type="number" min="0" step="0.01"></div>
+        <div class="field"><label>Wall height (m)</label><input id="planWallH" type="number" min="0" step="0.01"></div>
+        <div class="field"><label>Ceiling length (m)</label><input id="planCeilL" type="number" min="0" step="0.01"></div>
+        <div class="field"><label>Ceiling width (m)</label><input id="planCeilW" type="number" min="0" step="0.01"></div>
+      </div>
+      <div class="field" style="margin-top:12px"><label>Openings to deduct — one per line: width × height</label><textarea id="planOpenings" placeholder="0.90 × 2.10
+1.80 × 2.10"></textarea></div>
+      <div class="actions" style="margin-top:12px">
+        <button type="button" class="btn" id="addPlanWallBtn">Add partition / wall</button>
+        <button type="button" class="btn secondary" id="addPlanCeilingBtn">Add ceiling</button>
+        <button type="button" class="btn secondary" id="planPromptBtn">Copy analysis prompt</button>
+      </div>
+      <div id="planSummary" class="mini" style="margin-top:10px"></div>
+    </section>
+
+    <section class="card">
+      <h2>Plan checklist</h2>
+      <div class="chips">
+        <label class="chip"><input type="checkbox" data-plancheck="dimensions"> Dimensions</label>
+        <label class="chip"><input type="checkbox" data-plancheck="doors"> Doors / openings</label>
+        <label class="chip"><input type="checkbox" data-plancheck="windows"> Windows</label>
+        <label class="chip"><input type="checkbox" data-plancheck="levels"> Levels / drops</label>
+        <label class="chip"><input type="checkbox" data-plancheck="led"> LED / lighting</label>
+        <label class="chip"><input type="checkbox" data-plancheck="wet"> Wet areas</label>
+      </div>
+    </section>
+  </main>
+
+  <main id="savedPage" class="page">
+    <section class="card"><h1>Saved quotes</h1><p class="sub">Saved only in this browser/device. Export important quotes as JSON too.</p><div id="savedQuotes"></div></section>
+  </main>
+
+  <main id="settingsPage" class="page">
+    <section class="card">
+      <h1>Settings</h1><p class="sub">These drive every calculation. Starter recipes are working assumptions: replace them with your supplier prices and your real production data as you learn.</p>
+      <div class="notice">Your questionnaire gave a target income of <b>Rs 80,000/month</b>, 22 workdays and 5 productive hours/day. That implies a minimum owner-earnings cost of about <b>Rs 727/hour</b> before separate overhead and profit. This calculator starts at that derived figure; you can change it below.</div>
+    </section>
+    <section class="card">
+      <h2>Business & pricing</h2>
+      <div class="grid g2">
+        <div class="field"><label>Business / trading name</label><input id="sBusiness"></div>
+        <div class="field"><label>Currency</label><input id="sCurrency" value="MUR"></div>
+        <div class="field"><label>Owner labour cost per productive hour (Rs)</label><input id="sLabourRate" type="number" min="0" step="10"></div>
+        <div class="field"><label>Productive hours / day</label><input id="sHoursDay" type="number" min="1" step="0.5"></div>
+        <div class="field"><label>Helper day cost (Rs)</label><input id="sHelperDay" type="number" min="0" step="50"></div>
+        <div class="field"><label>Target gross margin %</label><input id="sMargin" type="number" min="0" max="80" step="1"></div>
+        <div class="field"><label>Job overhead % of direct cost</label><input id="sOverhead" type="number" min="0" max="50" step="1"></div>
+        <div class="field"><label>Minimum job charge (Rs)</label><input id="sMinJob" type="number" min="0" step="500"></div>
+        <div class="field"><label>Deposit %</label><input id="sDeposit" type="number" min="0" max="100" step="5"></div>
+        <div class="field"><label>Quote validity</label><input id="sValidity"></div>
+      </div>
+      <label class="chip" style="margin-top:12px"><input id="sApplyMin" type="checkbox" checked> Apply minimum job charge automatically</label>
+    </section>
+
+    <section class="card">
+      <div class="row"><div class="grow"><h2 style="margin:0">Material price book</h2><div class="sub">Prices are editable. “Working estimate” means confirm with your supplier before a live quote.</div></div><button type="button" class="btn secondary" id="addMaterialBtn">+ Material</button></div>
+      <div id="materialSettings" class="mat-list"></div>
+    </section>
+
+    <section class="card">
+      <div class="row"><div class="grow"><h2 style="margin:0">Work presets / recipes</h2><div class="sub">Consumption is in purchase units per job basis. Labour is hours per quoted unit.</div></div><button type="button" class="btn secondary" id="addAssemblyBtn">+ Preset</button></div>
+      <div id="assemblySettings"></div>
+    </section>
+
+    <section class="card">
+      <h2>Data</h2>
+      <div class="actions"><button class="btn secondary" type="button" id="importSetupBtn">Import questionnaire/config JSON</button><input id="importSetupFile" type="file" accept="application/json" class="hidden"><button class="btn secondary" type="button" id="exportConfigBtn">Export settings JSON</button><button class="btn danger" type="button" id="resetBtn">Reset calculator</button></div>
+    </section>
+  </main>
+</div>
+
+<nav class="bottomnav no-print">
+  <button class="active" data-page="calcPage"><b>＋</b>Calculate</button>
+  <button data-page="plansPage"><b>⌑</b>Plans</button>
+  <button data-page="printPage"><b>▤</b>Quote</button>
+  <button data-page="savedPage"><b>▣</b>Saved</button>
+  <button data-page="settingsPage"><b>⚙</b>Settings</button>
+</nav>
+
+<script>
+(()=>{
+'use strict';
+const TODAY=()=>new Date().toISOString().slice(0,10);
+const uid=()=>Math.random().toString(36).slice(2,9);
+const num=v=>Number.isFinite(Number(v))?Number(v):0;
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,num(v)));
+const fmt=n=>'Rs '+Math.round(num(n)).toLocaleString('en-MU');
+const fmt2=n=>num(n).toLocaleString('en-MU',{maximumFractionDigits:2});
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const download=(name,text,type='application/json')=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},0)};
+
+const defaultMaterials=[
+{id:'boardStd',name:'Standard gypsum board',category:'Board',unit:'sheet',size:'1.2 × 2.4 m',price:525,supplier:'SMS Mauritius',type:'Verified local',source:'Public online listing; confirm exact grade/dimensions before live quote.',round:true},
+{id:'boardMR',name:'Moisture-resistant gypsum board',category:'Board',unit:'sheet',size:'1.2 × 2.4 m',price:900,supplier:'Local supplier',type:'Working estimate',source:'Replace with current supplier quote.',round:true},
+{id:'boardFire',name:'Fire-rated gypsum board',category:'Board',unit:'sheet',size:'1.2 × 2.4 m reference',price:1200,supplier:'Local supplier',type:'Working estimate',source:'Specialist board allowance only.',round:true},
+{id:'stud',name:'Metal stud',category:'Framing',unit:'length',size:'75 × 36 × 0.50 × 2700 mm',price:225,supplier:'AGW / local supplier',type:'Working estimate',source:'Local specification identified; replace with supplier quote.',round:true},
+{id:'track',name:'Metal track',category:'Framing',unit:'length',size:'76 × 30 × 0.50 × 3000 mm',price:200,supplier:'AGW / local supplier',type:'Working estimate',source:'Local specification identified; replace with supplier quote.',round:true},
+{id:'furring',name:'Gypsum furring / steel brandering',category:'Framing',unit:'length',size:'3 m reference',price:160,supplier:'Coral Ceilings / local supplier',type:'Working estimate',source:'Local product family confirmed; replace with supplier quote.',round:true},
+{id:'mainChannel',name:'Main / carrier ceiling channel',category:'Framing',unit:'length',size:'3 m reference',price:200,supplier:'Local supplier',type:'Working estimate',source:'Temporary allowance.',round:true},
+{id:'hanger',name:'Ceiling hanger / hanger bracket',category:'Framing',unit:'each',size:'Ceiling suspension',price:45,supplier:'Coral Ceilings / local supplier',type:'Working estimate',source:'Local product family confirmed; replace with supplier quote.',round:true},
+{id:'angle',name:'Perimeter angle / wall angle',category:'Framing',unit:'length',size:'3 m reference',price:160,supplier:'Local supplier',type:'Working estimate',source:'Temporary allowance.',round:true},
+{id:'compound',name:'Joint compound',category:'Finishing',unit:'bag/tub',size:'20–25 kg reference',price:850,supplier:'Local supplier',type:'Working estimate',source:'Temporary allowance.',round:true},
+{id:'tape',name:'Joint tape',category:'Finishing',unit:'roll',size:'75–90 m reference',price:180,supplier:'Local supplier',type:'Working estimate',source:'Temporary allowance.',round:true},
+{id:'screws',name:'Drywall screws',category:'Fixing',unit:'box',size:'1,000 pcs reference',price:500,supplier:'Local supplier',type:'Working estimate',source:'Temporary allowance.',round:true},
+{id:'corner',name:'Corner bead / angle bead',category:'Finishing',unit:'length',size:'3 m reference',price:160,supplier:'Local supplier',type:'Working estimate',source:'Temporary allowance.',round:true},
+{id:'insulation',name:'Acoustic / thermal insulation',category:'Insulation',unit:'m²',size:'50 mm reference',price:250,supplier:'Local supplier',type:'Working estimate',source:'Per-m² allowance; replace with exact product.',round:false},
+{id:'accessPanel',name:'Access panel unit',category:'Accessory',unit:'each',size:'Standard reference',price:1200,supplier:'Local supplier',type:'Working estimate',source:'Temporary allowance.',round:true}
+];
+const R=(materialId,factor,basis='qty')=>({id:uid(),materialId,factor,basis});
+const defaultAssemblies=[
+{id:'stdPartition',name:'Standard partition',unit:'m²',mode:'wall',labour:0.55,description:'Supply and installation of standard gypsum-board partition including metal framing, boards, fixings and standard joint treatment.',recipe:[R('boardStd',0.764),R('stud',1.85,'length'),R('track',0.70,'length'),R('compound',0.05),R('tape',0.025),R('screws',0.06)]},
+{id:'mrPartition',name:'Moisture-resistant partition',unit:'m²',mode:'wall',labour:0.60,description:'Supply and installation of moisture-resistant gypsum-board partition including framing, fixings and joint treatment.',recipe:[R('boardMR',0.764),R('stud',1.85,'length'),R('track',0.70,'length'),R('compound',0.05),R('tape',0.025),R('screws',0.06)]},
+{id:'acousticPartition',name:'Acoustic partition',unit:'m²',mode:'wall',labour:0.95,description:'Supply and installation of acoustic gypsum partition with insulated cavity and enhanced board build-up.',recipe:[R('boardStd',1.53),R('stud',1.85,'length'),R('track',0.70,'length'),R('insulation',1.05),R('compound',0.10),R('tape',0.05),R('screws',0.12)]},
+{id:'firePartition',name:'Fire-rated partition',unit:'m²',mode:'wall',labour:0.75,description:'Supply and installation of fire-rated gypsum partition using fire-rated boards and metal framing.',recipe:[R('boardFire',0.764),R('stud',1.85,'length'),R('track',0.70,'length'),R('compound',0.05),R('tape',0.025),R('screws',0.06)]},
+{id:'wallLining',name:'Wall lining',unit:'m²',mode:'wall',labour:0.40,description:'Gypsum-board wall lining on light metal framing including fixings and standard joint treatment.',recipe:[R('boardStd',0.382),R('furring',0.70),R('compound',0.025),R('tape',0.013),R('screws',0.03)]},
+{id:'flatCeiling',name:'Flat suspended ceiling',unit:'m²',mode:'ceiling',labour:0.70,description:'Supply and installation of flat suspended gypsum ceiling including suspension framing, board, fixings and standard joint treatment.',recipe:[R('boardStd',0.382),R('furring',0.88),R('mainChannel',0.30),R('hanger',0.75),R('angle',0.35,'perimeter'),R('compound',0.025),R('tape',0.013),R('screws',0.03)]},
+{id:'multiCeiling',name:'Dropped / multi-level ceiling',unit:'m²',mode:'ceiling',labour:1.00,description:'Supply and installation of dropped / multi-level gypsum ceiling including suspension system, boarding and joint treatment.',recipe:[R('boardStd',0.42),R('furring',1.00),R('mainChannel',0.35),R('hanger',0.90),R('angle',0.35,'perimeter'),R('compound',0.03),R('tape',0.016),R('screws',0.04)]},
+{id:'bulkhead',name:'Bulkhead / soffit',unit:'lm',mode:'linear',labour:0.75,description:'Formation of gypsum bulkhead / soffit including framing, boarding, corner treatment and finishing.',recipe:[R('boardStd',0.38),R('furring',0.70),R('track',0.40),R('corner',0.35),R('compound',0.02),R('tape',0.015),R('screws',0.03)]},
+{id:'ledCove',name:'LED cove / light trough',unit:'lm',mode:'linear',labour:0.65,description:'Formation of gypsum LED cove / light trough including framing, boarding and finishing. Electrical/LED components excluded unless stated.',recipe:[R('boardStd',0.25),R('furring',0.45),R('track',0.35),R('compound',0.015),R('tape',0.01),R('screws',0.025)]},
+{id:'tvWall',name:'TV feature wall',unit:'m²',mode:'wall',labour:1.00,description:'Custom gypsum TV feature wall including framing, board and joint treatment; decorative/electrical finishes as stated.',recipe:[R('boardStd',0.42),R('stud',0.65),R('track',0.28),R('compound',0.035),R('tape',0.018),R('screws',0.04)]},
+{id:'niche',name:'Niche / shelf',unit:'each',mode:'each',labour:2.50,description:'Formation of gypsum niche / shelf including framing, boarding, corners and finishing.',recipe:[R('boardStd',0.35),R('stud',0.50),R('track',0.50),R('corner',0.70),R('compound',0.10),R('tape',0.04),R('screws',0.03)]},
+{id:'repair',name:'Repairs / patching',unit:'m²',mode:'manual',labour:1.50,description:'Gypsum-board repair / patching including local board replacement, joint treatment and sanding.',recipe:[R('boardStd',0.38),R('compound',0.05),R('tape',0.02),R('screws',0.02)]},
+{id:'demolition',name:'Removal / demolition',unit:'m²',mode:'manual',labour:0.25,description:'Careful removal of existing gypsum work. Disposal included only if stated.',recipe:[]},
+{id:'access',name:'Access panel',unit:'each',mode:'each',labour:0.50,description:'Supply and installation of gypsum ceiling/wall access panel.',recipe:[R('accessPanel',1)]},
+{id:'cutout',name:'Downlight / service cut-out',unit:'each',mode:'each',labour:0.08,description:'Formation of opening for downlight / service penetration. Electrical work excluded.',recipe:[]},
+{id:'painting',name:'Painting',unit:'m²',mode:'manual',labour:0.18,description:'Painting of completed gypsum surface. Paint material to be configured if supplied.',recipe:[]},
+{id:'insulationWork',name:'Insulation',unit:'m²',mode:'manual',labour:0.10,description:'Installation of acoustic / thermal insulation within gypsum system.',recipe:[R('insulation',1.05)]}
+];
+// VSP LTD V2 additions: construction finishing, protection and site-access items.
+const vspExtraMaterials=[
+{id:'primer',name:'Wall / gypsum primer',category:'Painting',unit:'L',size:'10 L reference',price:1200,supplier:'Local supplier',type:'Working estimate',source:'Replace with current supplier quote.',round:true},
+{id:'paint',name:'Interior paint',category:'Painting',unit:'L',size:'10 L reference',price:1800,supplier:'Local supplier',type:'Working estimate',source:'Replace with current supplier quote.',round:true},
+{id:'exteriorPaint',name:'Exterior paint',category:'Painting',unit:'L',size:'10 L reference',price:2200,supplier:'Local supplier',type:'Working estimate',source:'Replace with current supplier quote.',round:true},
+{id:'waterproofing',name:'Cementitious waterproofing',category:'Waterproofing',unit:'kg',size:'20 kg reference',price:1800,supplier:'Local supplier',type:'Working estimate',source:'Replace with exact system quote.',round:true},
+{id:'mesh',name:'Fiberglass reinforcement mesh',category:'Waterproofing',unit:'m²',size:'Standard mesh',price:90,supplier:'Local supplier',type:'Working estimate',source:'Per-m² allowance.',round:false},
+{id:'protection',name:'Floor / furniture protection',category:'Protection',unit:'m²',size:'Consumable allowance',price:35,supplier:'Local supplier',type:'Working estimate',source:'Consumable allowance.',round:false}
+];
+const vspExtraAssemblies=[
+{id:'paintPrep2',name:'Painting — preparation + primer + 2 coats',unit:'m²',mode:'manual',labour:0.32,description:'Surface preparation, localized filling/sanding, primer and two finish coats.',recipe:[R('primer',0.08),R('paint',0.12)]},
+{id:'paintFinish',name:'Painting — 2 finish coats',unit:'m²',mode:'manual',labour:0.22,description:'Two finish coats on prepared surface.',recipe:[R('paint',0.12)]},
+{id:'waterproofSDB',name:'Bathroom waterproofing system',unit:'m²',mode:'manual',labour:0.45,description:'Surface preparation, reinforcement at critical joints and cementitious waterproofing. Final system specification to be confirmed.',recipe:[R('waterproofing',1.2),R('mesh',1.05)]},
+{id:'windowMesh',name:'Window / door perimeter reinforcement',unit:'lm',mode:'linear',labour:0.18,description:'Reinforcement mesh / treatment around openings before finishing.',recipe:[R('mesh',0.25,'length')]},
+{id:'protectionWork',name:'Site protection + final cleaning',unit:'m²',mode:'manual',labour:0.08,description:'Protection of floors/furniture and final cleaning allowance.',recipe:[R('protection',1.05)]},
+{id:'scaffold',name:'Scaffold / access allowance',unit:'m²',mode:'manual',labour:0.12,description:'Site access and scaffold handling allowance; rental charged separately when applicable.',recipe:[]}
+];
+const defaults={settings:{business:'VSP Building & Interior Projects Company Ltd',currency:'MUR',labourRate:728,hoursDay:5,helperDay:1200,margin:25,overhead:5,minJob:25000,applyMin:true,deposit:30,validity:'30 days',boardWaste:10,frameWaste:5},materials:defaultMaterials,assemblies:defaultAssemblies};
+const freshJob=()=>({id:uid(),date:TODAY(),clientName:'',clientPhone:'',site:'',quoteRef:'Q-'+TODAY().replaceAll('-','')+'-'+Math.floor(100+Math.random()*900),pricingMode:'supply',geometry:1,finish:1,siteFactors:[],boardWaste:null,frameWaste:null,otherWaste:5,transport:0,designFee:0,otherCost:0,useHelper:false,helperDays:0,discountType:'percent',discountValue:0,discountDescription:'',internalNotes:'',items:[],planPhotos:[],planData:{knownDim:'',ref:'',confidence:'medium',wallL:'',wallH:'',ceilL:'',ceilW:'',openings:'',checks:[]}});
+let state;
+try{state=JSON.parse(localStorage.getItem('gypsumCalcV2')||localStorage.getItem('gypsumCalcV1'))}catch(e){}
+if(!state||!state.settings){state={settings:structuredClone(defaults.settings),materials:structuredClone(defaults.materials),assemblies:structuredClone(defaults.assemblies),job:freshJob(),saved:[]}}
+state.settings={...structuredClone(defaults.settings),...(state.settings||{})};
+state.materials=Array.isArray(state.materials)&&state.materials.length?state.materials:structuredClone(defaults.materials);
+state.assemblies=Array.isArray(state.assemblies)&&state.assemblies.length?state.assemblies:structuredClone(defaults.assemblies);
+state.job=state.job||freshJob();state.saved=Array.isArray(state.saved)?state.saved:[];
+if(state.job.discountType==null)state.job.discountType='percent';
+if(state.job.discountValue==null)state.job.discountValue=0;
+if(state.job.discountDescription==null)state.job.discountDescription='';
+if(state.job.boardWaste==null)state.job.boardWaste=state.settings.boardWaste;
+if(state.job.frameWaste==null)state.job.frameWaste=state.settings.frameWaste;
+state.job.items=(state.job.items||[]).map(it=>({...it,overrideMaterial:it.overrideMaterial??'',overrideLabour:it.overrideLabour??''}));
+
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+function save(){localStorage.setItem('gypsumCalcV2',JSON.stringify(state));const el=$('#saveState');if(el){el.textContent='Saved locally';setTimeout(()=>el.textContent='Saved locally',600)}}
+function markSaving(){const el=$('#saveState');if(el)el.textContent='Saving…';clearTimeout(markSaving.t);markSaving.t=setTimeout(save,180)}
+function page(id){$$('.page').forEach(x=>x.classList.toggle('active',x.id===id));$$('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='printPage')renderQuote();if(id==='settingsPage')renderSettings();if(id==='savedPage')renderSaved();if(id==='plansPage')renderPlans();window.scrollTo({top:0,behavior:'smooth'})}
+$$('[data-page]').forEach(b=>b.addEventListener('click',()=>page(b.dataset.page)));
+
+function material(id){return state.materials.find(m=>m.id===id)}
+function assembly(id){return state.assemblies.find(a=>a.id===id)}
+function basisValue(item,basis){if(basis==='length')return num(item.length);if(basis==='perimeter')return num(item.perimeter);if(basis==='count')return num(item.count||item.qty);return num(item.qty)}
+function wasteFor(m){let w=state.job.otherWaste;if(m.category==='Board')w=state.job.boardWaste;if(m.category==='Framing')w=state.job.frameWaste;const g=num(state.job.geometry);if(m.category==='Board'&&g>1)w+=g>=1.5?10:5;if(m.category==='Framing'&&g>1)w+=g>=1.5?5:3;return Math.max(0,w)/100}
+function finishMaterialFactor(m){if(m.category!=='Finishing')return 1;return num(state.job.finish)||1}
+function siteFactor(){return 1+(state.job.siteFactors||[]).reduce((a,b)=>a+num(b),0)}
+function labourFactor(){return (num(state.job.geometry)||1)*(num(state.job.finish)||1)*siteFactor()}
+function itemMetrics(item){const a=assembly(item.assemblyId);if(!a)return item;let qty=0,length=0,perimeter=0,count=0;if(a.mode==='wall'){length=num(item.length);qty=length*num(item.height);perimeter=2*(length+num(item.height))}else if(a.mode==='ceiling'){const L=num(item.length),W=num(item.width);length=L;qty=L*W;perimeter=2*(L+W)}else if(a.mode==='linear'){length=num(item.length);qty=length}else if(a.mode==='each'){count=num(item.count);qty=count}else{qty=num(item.qty);length=num(item.length);perimeter=num(item.perimeter)}return {...item,qty,length,perimeter,count}}
+function calc(){
+  const items=state.job.items.map(itemMetrics).filter(i=>i.qty>0);
+  const rawByMat={};const itemCostBasis=[];let hours=0;
+  for(const it of items){const a=assembly(it.assemblyId);if(!a)continue;const h=num(a.labour)*it.qty*labourFactor();hours+=h;const rawCostNominal={};for(const r of (a.recipe||[])){const m=material(r.materialId);if(!m)continue;const raw=num(r.factor)*basisValue(it,r.basis)*finishMaterialFactor(m)*(1+wasteFor(m));rawByMat[m.id]=(rawByMat[m.id]||0)+raw;rawCostNominal[m.id]=(rawCostNominal[m.id]||0)+raw}itemCostBasis.push({item:it,assembly:a,hours:h,rawCostNominal})}
+  const mats=[];let purchaseMaterialCost=0;for(const m of state.materials){const raw=rawByMat[m.id]||0;if(raw<=0)continue;const buy=m.round===false?raw:Math.ceil(raw-1e-9);const cost=buy*num(m.price);purchaseMaterialCost+=cost;mats.push({m,raw,buy,cost})}
+  // allocate actual purchase-pack material cost back to item lines by each material's raw share
+  const allocMat={};for(const x of itemCostBasis){allocMat[x.item.id]=0;for(const [mid,raw] of Object.entries(x.rawCostNominal)){const total=rawByMat[mid]||0;const mt=mats.find(z=>z.m.id===mid);if(total>0&&mt)allocMat[x.item.id]+=mt.cost*(raw/total)}}
+  const labourCost=hours*num(state.settings.labourRate);
+  const chargedMaterial=state.job.pricingMode==='labour'?0:purchaseMaterialCost;
+  const helper=state.job.useHelper?num(state.job.helperDays)*num(state.settings.helperDay):0;
+  const extras=num(state.job.transport)+num(state.job.designFee)+num(state.job.otherCost)+helper;
+  const direct=chargedMaterial+labourCost+extras;
+  const overhead=direct*num(state.settings.overhead)/100;
+  const cost=direct+overhead;
+  const margin=clamp(state.settings.margin,0,80)/100;
+  let sell=margin<1?cost/(1-margin):cost;
+  const beforeMin=sell;let minApplied=false;if(state.settings.applyMin&&sell<num(state.settings.minJob)){sell=num(state.settings.minJob);minApplied=true}
+  const profit=sell-cost;const actualMargin=sell?profit/sell*100:0;
+  const days=hours/Math.max(.1,num(state.settings.hoursDay));
+  const itemBase=[];let itemBaseTotal=0;for(const x of itemCostBasis){const b=x.hours*num(state.settings.labourRate)+(state.job.pricingMode==='labour'?0:(allocMat[x.item.id]||0));itemBase.push({...x,base:b});itemBaseTotal+=b}
+  // Allocate the final customer quote across work lines AND additional services.
+  // Additional services are already included in `sell`; do not add them a second time.
+  const allocationBase=itemBaseTotal+extras;
+  const workQuote=Math.max(0,sell-(extras>0? sell*(extras/Math.max(.0001,allocationBase)):0));
+  const autoLines=itemBase.map(x=>{const share=allocationBase?x.base/allocationBase:0;const amount=sell*share;return {...x,autoAmount:amount,rate:x.item.qty?amount/x.item.qty:0}});
+  let manualTotal=0, hasManual=false;
+  const customerLines=autoLines.map(x=>{
+    const it=x.item;
+    const autoMaterial=x.base?(state.job.pricingMode==='labour'?0:(allocMat[it.id]||0)/Math.max(.0001,x.base)*x.autoAmount):0;
+    const autoLabour=Math.max(0,x.autoAmount-autoMaterial);
+    const hasMat=it.overrideMaterial!=='' && it.overrideMaterial!=null && isFinite(num(it.overrideMaterial));
+    const hasLab=it.overrideLabour!=='' && it.overrideLabour!=null && isFinite(num(it.overrideLabour));
+    if(hasMat||hasLab){hasManual=true;const materialSell=hasMat?Math.max(0,num(it.overrideMaterial)):autoMaterial;const labourSell=hasLab?Math.max(0,num(it.overrideLabour)):autoLabour;const amount=materialSell+labourSell;manualTotal+=amount;return {...x,amount,rate:it.qty?amount/it.qty:0,materialSell,labourSell,manual:true,autoMaterial,autoLabour};}
+    return {...x,amount:x.autoAmount,rate:x.item.qty?x.autoAmount/x.item.qty:0,materialSell:autoMaterial,labourSell:autoLabour,manual:false,autoMaterial,autoLabour};
+  });
+  const extraLine=(extras>0)?{item:{id:'__extras',qty:1},assembly:{name:'Transport / additional services',unit:'job'},amount:allocationBase?sell*(extras/allocationBase):0,rate:allocationBase?sell*(extras/allocationBase):0,materialSell:0,labourSell:allocationBase?sell*(extras/allocationBase):0,manual:false,extra:true}:null;
+  if(extraLine)customerLines.push(extraLine);
+  // Always derive the quoted total from the displayed customer lines so the calculator
+  // and the quotation can never disagree because of allocation/rounding.
+  const quotedTotal=customerLines.reduce((a,x)=>a+num(x.amount),0);
+  const discountType=state.job.discountType||'percent';
+  const discountValue=Math.max(0,num(state.job.discountValue));
+  let discountAmount=discountType==='amount'?discountValue:quotedTotal*discountValue/100;
+  discountAmount=Math.min(discountAmount,quotedTotal);
+  const finalSell=Math.max(0,quotedTotal-discountAmount);
+  const finalProfit=finalSell-cost;const finalMargin=finalSell?finalProfit/finalSell*100:0;
+  return {items,mats,hours,days,purchaseMaterialCost,chargedMaterial,labourCost,helper,extras,direct,overhead,cost,sell:finalSell,grossQuote:quotedTotal,discountType,discountValue,discountAmount,beforeMin,minApplied,profit:finalProfit,actualMargin:finalMargin,customerLines,hasManual};
+}
+function syncJobInputs(){const j=state.job;$('#clientName').value=j.clientName||'';$('#clientPhone').value=j.clientPhone||'';$('#site').value=j.site||'';$('#quoteRef').value=j.quoteRef||'';$('#geometry').value=String(j.geometry||1);$('#finish').value=String(j.finish||1);$('#boardWaste').value=j.boardWaste;$('#frameWaste').value=j.frameWaste;$('#otherWaste').value=j.otherWaste;$('#transport').value=j.transport;$('#designFee').value=j.designFee;$('#otherCost').value=j.otherCost;$('#useHelper').checked=!!j.useHelper;$('#helperDays').value=j.helperDays;$('#internalNotes').value=j.internalNotes||'';$('#discountType').value=j.discountType||'percent';$('#discountValue').value=j.discountValue??0;$('#discountDescription').value=j.discountDescription||'';$$('#pricingMode button').forEach(b=>b.classList.toggle('active',b.dataset.mode===j.pricingMode));$$('[data-site]').forEach(c=>c.checked=(j.siteFactors||[]).includes(num(c.dataset.site)))}
+function renderPlans(){
+ const j=state.job;const p=j.planData||{};['planKnownDim','planRef','planConfidence','planWallL','planWallH','planCeilL','planCeilW','planOpenings'].forEach(id=>{const k={planKnownDim:'knownDim',planRef:'ref',planConfidence:'confidence',planWallL:'wallL',planWallH:'wallH',planCeilL:'ceilL',planCeilW:'ceilW',planOpenings:'openings'}[id];const el=$('#'+id);if(el)el.value=p[k]??''});
+ $$('[data-plancheck]').forEach(x=>x.checked=(p.checks||[]).includes(x.dataset.plancheck));
+ const el=$('#planPreview'); if(!el)return;el.innerHTML=(j.planPhotos||[]).length?j.planPhotos.map((x,i)=>`<div class="plan-thumb"><img src="${x.data}" alt="Plan ${i+1}"><button type="button" data-delplan="${i}">×</button><div class="mini" style="padding:7px">${esc(x.name||'Plan '+(i+1))}</div></div>`).join(''):'<div class="empty" style="grid-column:1/-1">No plan photo yet. Add a plan, sketch or site photo.</div>';
+ el.querySelectorAll('[data-delplan]').forEach(b=>b.addEventListener('click',()=>{j.planPhotos.splice(num(b.dataset.delplan),1);save();renderPlans()}));
+ const wl=num(p.wallL),wh=num(p.wallH),cl=num(p.ceilL),cw=num(p.ceilW);let open=0;String(p.openings||'').split(/\n|,/).forEach(line=>{const m=line.replace(',','.').match(/(\d+(?:\.\d+)?)\s*[x×*]\s*(\d+(?:\.\d+)?)/i);if(m)open+=num(m[1])*num(m[2])});const wall=Math.max(0,wl*wh-open),ceil=cl*cw;$('#planSummary').textContent=`Wall area: ${wall.toFixed(2)} m² · Ceiling area: ${ceil.toFixed(2)} m² · Openings deducted: ${open.toFixed(2)} m² · Confidence: ${p.confidence||'medium'}`;
+}
+function bindPlans(){
+ $('#planUploadBtn').addEventListener('click',()=>$('#planFiles').click());
+ $('#planFiles').addEventListener('change',async e=>{for(const f of [...e.target.files]){if(!f.type.startsWith('image/'))continue;const data=await new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(f)});state.job.planPhotos.push({name:f.name,data});}e.target.value='';save();renderPlans()});
+ $('#clearPlansBtn').addEventListener('click',()=>{state.job.planPhotos=[];save();renderPlans()});
+ const map=[['planKnownDim','knownDim'],['planRef','ref'],['planConfidence','confidence'],['planWallL','wallL'],['planWallH','wallH'],['planCeilL','ceilL'],['planCeilW','ceilW'],['planOpenings','openings']];map.forEach(([id,k])=>$('#'+id).addEventListener('input',e=>{state.job.planData[k]=e.target.value;markSaving();renderPlans()}));
+ $$('[data-plancheck]').forEach(x=>x.addEventListener('change',()=>{state.job.planData.checks=$$('[data-plancheck]:checked').map(y=>y.dataset.plancheck);save()}));
+ $('#addPlanWallBtn').addEventListener('click',()=>{const p=state.job.planData||{};if(num(p.wallL)<=0||num(p.wallH)<=0){alert('Enter wall length and height first.');return}const a=state.assemblies.find(x=>x.id==='stdPartition')||state.assemblies[0];let wl=num(p.wallL),wh=num(p.wallH),open=0;String(p.openings||'').split(/\n|,/).forEach(line=>{const m=line.replace(',','.').match(/(\d+(?:\.\d+)?)\s*[x×*]\s*(\d+(?:\.\d+)?)/i);if(m)open+=num(m[1])*num(m[2])});const area=Math.max(0,wl*wh-open);state.job.items.push({id:uid(),assemblyId:a.id,length:wl,height:wh,width:'',count:1,qty:area,perimeter:'',openings:open});save();renderWork();renderAll();page('calcPage')});
+ $('#addPlanCeilingBtn').addEventListener('click',()=>{const p=state.job.planData||{};if(num(p.ceilL)<=0||num(p.ceilW)<=0){alert('Enter ceiling length and width first.');return}const a=state.assemblies.find(x=>x.id==='flatCeiling')||state.assemblies[0];state.job.items.push({id:uid(),assemblyId:a.id,length:num(p.ceilL),width:num(p.ceilW),height:'',count:1,qty:num(p.ceilL)*num(p.ceilW),perimeter:''});save();renderWork();renderAll();page('calcPage')});
+ $('#planPromptBtn').addEventListener('click',async()=>{const p=state.job.planData||{};const prompt=`Analyse ce plan de chantier pour un devis VSP LTD. Identifie les cloisons, doublages, faux plafonds, retombées/coffrages, niches, ouvertures, zones de peinture, étanchéité SDB, isolation et détails LED. Donne les dimensions visibles, les surfaces/linéaires calculables et signale clairement ce qui est incertain. Ne devine pas une cote absente. Référence du plan: ${p.ref||'non précisée'}. Dimension connue/échelle: ${p.knownDim||'non précisée'} m.`;try{await navigator.clipboard.writeText(prompt);alert('Prompt copié. Tu peux envoyer les photos du plan avec ce texte dans ChatGPT.')}catch(e){promptBox=prompt('Copie ce texte avec les photos du plan:',prompt)}});
+ renderPlans();
+}
+
+function bindJobInputs(){['clientName','clientPhone','site','quoteRef','internalNotes'].forEach(id=>$('#'+id).addEventListener('input',e=>{state.job[id]=e.target.value;markSaving();renderAll()}));[['geometry','geometry'],['finish','finish'],['boardWaste','boardWaste'],['frameWaste','frameWaste'],['otherWaste','otherWaste'],['transport','transport'],['designFee','designFee'],['otherCost','otherCost'],['helperDays','helperDays'],['discountValue','discountValue']].forEach(([id,k])=>$('#'+id).addEventListener('input',e=>{state.job[k]=num(e.target.value);markSaving();renderAll()}));$('#discountType').addEventListener('change',e=>{state.job.discountType=e.target.value;markSaving();renderAll()});$('#discountDescription').addEventListener('input',e=>{state.job.discountDescription=e.target.value;markSaving();renderAll()});$('#useHelper').addEventListener('change',e=>{state.job.useHelper=e.target.checked;markSaving();renderAll()});$$('#pricingMode button').forEach(b=>b.addEventListener('click',()=>{state.job.pricingMode=b.dataset.mode;if(b.dataset.mode==='design'&&!state.job.designFee)state.job.designFee=2500;syncJobInputs();markSaving();renderAll()}));$$('[data-site]').forEach(c=>c.addEventListener('change',()=>{state.job.siteFactors=$$('[data-site]:checked').map(x=>num(x.dataset.site));markSaving();renderAll()}))}
+function addWork(){const a=state.assemblies[0];state.job.items.push({id:uid(),assemblyId:a.id,length:'',width:'',height:'',count:1,qty:'',perimeter:'',overrideMaterial:'',overrideLabour:''});save();renderWork();renderAll();setTimeout(()=>document.querySelector('.work-item:last-child')?.scrollIntoView({behavior:'smooth',block:'center'}),30)}
+function workInputs(it,a){let measure='';if(a.mode==='wall')measure=`<div class="grid g2"><div class="field"><label>Length (m)</label><input data-w="length" type="number" step="0.01" min="0" value="${esc(it.length)}"></div><div class="field"><label>Height (m)</label><input data-w="height" type="number" step="0.01" min="0" value="${esc(it.height)}"></div></div>`;else if(a.mode==='ceiling')measure=`<div class="grid g2"><div class="field"><label>Length (m)</label><input data-w="length" type="number" step="0.01" min="0" value="${esc(it.length)}"></div><div class="field"><label>Width (m)</label><input data-w="width" type="number" step="0.01" min="0" value="${esc(it.width)}"></div></div>`;else if(a.mode==='linear')measure=`<div class="field"><label>Length (linear m)</label><input data-w="length" type="number" step="0.01" min="0" value="${esc(it.length)}"></div>`;else if(a.mode==='each')measure=`<div class="field"><label>Quantity</label><input data-w="count" type="number" step="1" min="0" value="${esc(it.count)}"></div>`;else measure=`<div class="field"><label>Quantity (${esc(a.unit)})</label><input data-w="qty" type="number" step="0.01" min="0" value="${esc(it.qty)}"></div>`;return measure+`<div class="price-override"><div class="mini"><b>Prix manuel avant devis</b> — laisse vide pour utiliser le calcul automatique.</div><div class="grid g2" style="margin-top:8px"><div class="field"><label>Prix matériaux (Rs)</label><input data-w="overrideMaterial" type="number" min="0" step="50" placeholder="Automatique" value="${it.overrideMaterial??''}"></div><div class="field"><label>Prix main-d'œuvre (Rs)</label><input data-w="overrideLabour" type="number" min="0" step="50" placeholder="Automatique" value="${it.overrideLabour??''}"></div></div><div class="override-note">Ces montants remplacent uniquement le prix de vente du poste. Tes coûts internes restent calculés séparément.</div></div>`}
+function renderWork(){const el=$('#workItems');if(!state.job.items.length){el.innerHTML='<div class="empty" style="margin-top:12px">No work items yet. Tap <b>+ Add</b> to start the job.</div>';return}const c=calc();el.innerHTML=state.job.items.map((it,idx)=>{const a=assembly(it.assemblyId)||state.assemblies[0];const m=itemMetrics(it);const line=c.customerLines.find(x=>x.item.id===it.id);return `<div class="work-item" data-id="${it.id}"><div class="work-head"><div class="grow"><select data-w="assemblyId" style="width:100%;font-weight:800;border:0;background:transparent;font-size:16px;padding:0 0 3px">${state.assemblies.map(x=>`<option value="${x.id}" ${x.id===a.id?'selected':''}>${esc(x.name)}</option>`).join('')}</select><div class="work-meta">${m.qty?fmt2(m.qty)+' '+esc(a.unit):'Enter measurements'} · ${fmt2(num(a.labour)*m.qty*labourFactor())} labour h${(it.overrideMaterial!==''||it.overrideLabour!=='')?' · Prix manuel':''}</div></div><div class="work-total">${line?fmt(line.amount):'—'}</div><button type="button" class="btn ghost danger-text" data-remove="${it.id}" aria-label="Remove">×</button></div><div style="margin-top:10px">${workInputs(it,a)}</div></div>`}).join('');
+ el.querySelectorAll('[data-w]').forEach(inp=>inp.addEventListener('input',e=>{const box=e.target.closest('.work-item');const item=state.job.items.find(x=>x.id===box.dataset.id);const k=e.target.dataset.w;if(k==='assemblyId'){item[k]=e.target.value;item.length='';item.width='';item.height='';item.qty='';item.count=1;item.perimeter=''}else item[k]=e.target.value;markSaving();renderWork();renderAll(false)}));el.querySelectorAll('[data-remove]').forEach(b=>b.addEventListener('click',()=>{state.job.items=state.job.items.filter(x=>x.id!==b.dataset.remove);markSaving();renderWork();renderAll()}))}
+function renderAll(includeWork=false){const c=calc();if(includeWork)renderWork();$('#kMaterial').textContent=fmt(c.chargedMaterial);$('#kLabour').textContent=fmt(c.labourCost);$('#kHours').textContent=fmt2(c.hours)+' h';$('#kSell').textContent=fmt(c.sell);const mb=$('#marginBadge');mb.className='badge '+(c.actualMargin+0.1>=num(state.settings.margin)?'ok':'warn');mb.textContent=`${c.actualMargin.toFixed(1)}% margin`;
+ const modeText=state.job.pricingMode==='labour'?'Material schedule calculated but material cost is excluded from the customer price.':'Materials are included in the selling price.';$('#conditionHint').textContent=`Labour factor ×${labourFactor().toFixed(2)}. ${modeText}`;
+ $('#costBreakdown').innerHTML=`<div class="material-table"><table class="material-table"><tbody><tr><td>Materials purchased</td><td class="num">${fmt(c.purchaseMaterialCost)}</td></tr>${state.job.pricingMode==='labour'?'<tr><td>Materials charged to client</td><td class="num">Rs 0</td></tr>':''}<tr><td>Owner labour (${fmt2(c.hours)} h × ${fmt(state.settings.labourRate)}/h)</td><td class="num">${fmt(c.labourCost)}</td></tr>${c.helper?`<tr><td>Helper</td><td class="num">${fmt(c.helper)}</td></tr>`:''}${num(state.job.transport)?`<tr><td>Transport / delivery</td><td class="num">${fmt(state.job.transport)}</td></tr>`:''}${num(state.job.designFee)?`<tr><td>Design fee / time</td><td class="num">${fmt(state.job.designFee)}</td></tr>`:''}${num(state.job.otherCost)?`<tr><td>Other direct cost</td><td class="num">${fmt(state.job.otherCost)}</td></tr>`:''}<tr><td>Overhead (${fmt2(state.settings.overhead)}%)</td><td class="num">${fmt(c.overhead)}</td></tr><tr><td><b>True estimated cost</b></td><td class="num"><b>${fmt(c.cost)}</b></td></tr><tr><td>Target margin ${fmt2(state.settings.margin)}%</td><td class="num">${fmt(c.profit)} expected gross profit</td></tr>${c.minApplied?`<tr><td class="danger-text">Minimum job charge applied</td><td class="num">${fmt(state.settings.minJob)}</td></tr>`:''}<tr><td><b>Customer quote</b></td><td class="num"><b>${fmt(c.sell)}</b></td></tr><tr><td>Estimated owner workdays</td><td class="num">${c.days.toFixed(1)} days</td></tr></tbody></table></div>`;
+ $('#discountInternalNotice').textContent=c.discountAmount>0?`Discount applied: ${fmt(c.discountAmount)}${state.job.discountDescription?' — '+state.job.discountDescription:''}. Final customer price: ${fmt(c.sell)}.`:'No commercial discount applied.';
+ $('#discountPreview').textContent=c.discountAmount>0?`Discount: ${fmt(c.discountAmount)} · Final quote: ${fmt(c.sell)}.`:`Final quote before discount: ${fmt(c.grossQuote)}.`;
+ $('#materialSchedule').innerHTML=c.mats.length?`<div style="overflow:auto"><table class="material-table"><thead><tr><th>Material</th><th>Need</th><th>Buy</th><th class="num">Cost</th></tr></thead><tbody>${c.mats.map(x=>`<tr><td>${esc(x.m.name)}<div class="mini">${esc(x.m.size||'')} · ${esc(x.m.type||'')}</div></td><td>${fmt2(x.raw)} ${esc(x.m.unit)}</td><td><b>${fmt2(x.buy)} ${esc(x.m.unit)}</b></td><td class="num">${fmt(x.cost)}</td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">Add measurements to generate the material list.</div>';
+ renderQuote();save()}
+
+function renderQuote(){
+  const c=calc(),j=state.job,s=state.settings;
+  const mode=j.pricingMode==='labour'?'Labour only':j.pricingMode==='design'?'Design, supply & installation':'Supply & installation';
+  const deposit=c.sell*num(s.deposit)/100;
+  const balance=c.sell-deposit;
+  const materialSell=c.customerLines.reduce((a,x)=>a+num(x.materialSell),0);
+  const labourSell=c.customerLines.reduce((a,x)=>a+num(x.labourSell),0);
+  $('#quotePaper').innerHTML=`
+    <div class="quote-head">
+      <div><div class="quote-title">QUOTATION</div><div><b>${esc(s.business)}</b></div><div class="mini">Building & interior works</div></div>
+      <div class="quote-meta"><b>${esc(j.quoteRef)}</b><br>Date: ${esc(j.date)}<br>Valid: ${esc(s.validity)}</div>
+    </div>
+    <div class="qclient">
+      <div><div class="mini">PREPARED FOR</div><b>${esc(j.clientName||'Client')}</b><br>${esc(j.clientPhone||'')}</div>
+      <div><div class="mini">PROJECT / SITE</div>${esc(j.site||'—')}<br><span class="mini">${esc(mode)}</span></div>
+    </div>
+    <h3>Travaux prévus</h3>
+    <table class="qtable"><thead><tr><th>Désignation</th><th class="num">Qté</th><th class="num hide-mobile">Prix unitaire</th><th class="num">Montant</th></tr></thead><tbody>
+      ${c.customerLines.length?c.customerLines.map(x=>`<tr><td><b>${esc(x.assembly.name)}</b></td><td class="num">${fmt2(x.item.qty)} ${esc(x.assembly.unit)}</td><td class="num hide-mobile">${fmt(x.rate)}</td><td class="num"><b>${fmt(x.amount)}</b></td></tr>`).join(''):`<tr><td colspan="4">Aucun travail chiffré.</td></tr>`}
+    </tbody></table>
+
+    <div class="quote-detail-grid">
+      <div class="quote-detail-card">
+        <h3>Matériaux prévus</h3>
+        <p class="mini">Type et qualité des matériaux inclus dans le devis.</p>
+        ${c.mats.length?`<table class="qtable"><thead><tr><th>Matériau</th><th>Qualité / spécification</th><th class="num">Qté</th><th class="num">Montant</th></tr></thead><tbody>${c.mats.map(x=>`<tr><td><b>${esc(x.m.name)}</b></td><td>${esc(x.m.size||'')} ${x.m.type&&x.m.type!=='Working estimate'?`<div class="mini">${esc(x.m.type)}</div>`:''}</td><td class="num">${fmt2(x.buy)} ${esc(x.m.unit)}</td><td class="num">${fmt(x.cost)}</td></tr>`).join('')}</tbody></table>`:'<div class="empty">Aucun matériau détaillé.</div>'}
+        <div class="quote-price-line"><span>Prix des matériaux</span><b>${fmt(materialSell)}</b></div>
+      </div>
+      <div class="quote-detail-card">
+        <h3>Main-d'œuvre</h3>
+        <p class="mini">Pose, assemblage, préparation, jointoiement et finition selon les travaux sélectionnés.</p>
+        <table class="qtable"><tbody>${c.customerLines.map(x=>`<tr><td><b>${esc(x.assembly.name)}</b></td><td class="num"><b>${fmt(x.labourSell)}</b></td></tr>`).join('')}<tr><td><b>Total main-d'œuvre / prestations</b></td><td class="num"><b>${fmt(labourSell)}</b></td></tr></tbody></table>
+      </div>
+    </div>
+
+    <div class="qsum">
+      <div><span>Matériaux</span><b>${fmt(materialSell)}</b></div>
+      <div><span>Main-d'œuvre & prestations</span><b>${fmt(labourSell)}</b></div>
+      ${c.discountAmount>0?`<div><span>Prix avant remise</span><b>${fmt(c.grossQuote)}</b></div><div><span>Remise${j.discountDescription?` — ${esc(j.discountDescription)}`:''}</span><b>− ${fmt(c.discountAmount)}</b></div>`:''}
+      <div class="grand"><span>TOTAL NET</span><span>${fmt(c.sell)}</span></div>
+      <div><span>Accompte (${fmt2(s.deposit)}%)</span><b>${fmt(deposit)}</b></div>
+      <div><span>Solde</span><b>${fmt(balance)}</b></div>
+    </div>
+
+    <div class="acceptance-block" style="margin-top:28px;padding:16px;border:1px solid #bdbdbd;border-radius:8px;break-inside:avoid;page-break-inside:avoid;color:#222;background:#fff">
+      <div style="font-size:16px;font-weight:800;margin-bottom:14px">BON POUR ACCORD</div>
+      <div style="font-size:13px;margin-bottom:20px">Devis accepté dans son intégralité, sous réserve des conditions indiquées ci-dessus.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <div><div style="font-size:12px;color:#555;margin-bottom:8px">Date :</div><div style="height:28px;border-bottom:1px solid #777"></div></div>
+        <div><div style="font-size:12px;color:#555;margin-bottom:8px">Signature du client :</div><div style="height:28px;border-bottom:1px solid #777"></div></div>
+      </div>
+    </div>
+
+    <div class="terms"><b>Conditions</b><ul>
+      <li>Les travaux sont réalisés selon les éléments et quantités indiqués dans le présent devis.</li>
+      <li>Les matériaux sont fournis selon les spécifications indiquées, sous réserve de disponibilité.</li>
+      <li>Toute modification ou prestation supplémentaire fera l'objet d'un complément de devis.</li>
+      <li>${j.pricingMode==='labour'?'Les matériaux restent à la charge du client.':'Les matériaux nécessaires aux travaux listés sont inclus dans le montant du devis.'}</li>
+      <li>Devis valable ${esc(s.validity)}.</li>
+    </ul></div>`;
+}
+function whatsapp(){const c=calc(),j=state.job,s=state.settings;return `QUOTATION ${j.quoteRef}\n${s.business}\nClient: ${j.clientName||'—'}\nSite: ${j.site||'—'}\n\n${c.customerLines.map(x=>`${x.assembly.name}: ${fmt2(x.item.qty)} ${x.assembly.unit} — ${fmt(x.amount)}`).join('\n')}\n\n${c.discountAmount>0?`Prix avant remise: ${fmt(c.grossQuote)}\nRemise${j.discountDescription?` — ${j.discountDescription}`:''}: -${fmt(c.discountAmount)}\n`:''}TOTAL NET: ${fmt(c.sell)}\nDeposit (${s.deposit}%): ${fmt(c.sell*s.deposit/100)}\nValid: ${s.validity}`}
+async function copyQuote(){const t=whatsapp();try{await navigator.clipboard.writeText(t);alert('Quote summary copied.')}catch(e){prompt('Copy this quote summary:',t)}}
+function quoteExport(){const c=calc();return {version:'1.0',tool:'Gypsum Costing & Quote Calculator',exportedAt:new Date().toISOString(),settings:state.settings,job:{...state.job,planPhotos:(state.job.planPhotos||[]).map(x=>({name:x.name}))},calculation:{hours:c.hours,days:c.days,purchaseMaterialCost:c.purchaseMaterialCost,chargedMaterial:c.chargedMaterial,labourCost:c.labourCost,overhead:c.overhead,trueCost:c.cost,grossQuote:c.grossQuote,discountType:c.discountType,discountValue:c.discountValue,discountAmount:c.discountAmount,sell:c.sell,profit:c.profit,actualMargin:c.actualMargin,materials:c.mats.map(x=>({name:x.m.name,need:x.raw,buy:x.buy,unit:x.m.unit,cost:x.cost})),lines:c.customerLines.map(x=>({name:x.assembly.name,quantity:x.item.qty,unit:x.assembly.unit,rate:x.rate,amount:x.amount}))}}}
+function materialsCsv(){const c=calc();return ['Material,Need,Buy,Unit,Unit Price,Cost,Supplier',...c.mats.map(x=>[x.m.name,x.raw,x.buy,x.m.unit,x.m.price,x.cost,x.m.supplier].map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(','))].join('\n')}
+
+function badgeClass(t){return t==='Verified local'?'ok':t==='User price / supplier quote'?'user':'warn'}
+function renderSettings(){const s=state.settings;$('#sBusiness').value=s.business;$('#sCurrency').value=s.currency;$('#sLabourRate').value=s.labourRate;$('#sHoursDay').value=s.hoursDay;$('#sHelperDay').value=s.helperDay;$('#sMargin').value=s.margin;$('#sOverhead').value=s.overhead;$('#sMinJob').value=s.minJob;$('#sDeposit').value=s.deposit;$('#sValidity').value=s.validity;$('#sApplyMin').checked=!!s.applyMin;
+ $('#materialSettings').innerHTML=state.materials.map(m=>`<div class="mat-row" data-mid="${m.id}"><div class="span2"><div class="row"><b class="grow">${esc(m.name)}</b><span class="badge ${badgeClass(m.type)}">${esc(m.type)}</span></div><div class="mini">${esc(m.size||'')} · ${esc(m.source||'')}</div></div><div class="field"><label>Price Rs</label><input data-m="price" type="number" min="0" step="1" value="${num(m.price)}"></div><div class="field"><label>Unit</label><input data-m="unit" value="${esc(m.unit)}"></div><div class="field"><label>Supplier</label><input data-m="supplier" value="${esc(m.supplier||'')}"></div><button type="button" class="btn ghost danger-text" data-delmat="${m.id}">×</button></div>`).join('');
+ $('#materialSettings').querySelectorAll('[data-m]').forEach(x=>x.addEventListener('change',e=>{const m=state.materials.find(z=>z.id===e.target.closest('[data-mid]').dataset.mid);const k=e.target.dataset.m;m[k]=k==='price'?num(e.target.value):e.target.value;if(k==='price'){m.type='User price / supplier quote';m.source='User-entered price, updated '+TODAY()}save();renderSettings();renderAll()}));$('#materialSettings').querySelectorAll('[data-delmat]').forEach(b=>b.addEventListener('click',()=>{if(!confirm('Remove this material? Existing recipes using it will no longer cost it.'))return;state.materials=state.materials.filter(m=>m.id!==b.dataset.delmat);save();renderSettings();renderAll()}));
+ $('#assemblySettings').innerHTML=state.assemblies.map(a=>`<details class="setting" data-aid="${a.id}"><summary>${esc(a.name)} <span class="mini">· ${esc(a.unit)} · ${fmt2(a.labour)} h/${esc(a.unit)}</span></summary><div class="setting-body"><div class="grid g2"><div class="field"><label>Name</label><input data-a="name" value="${esc(a.name)}"></div><div class="field"><label>Quote unit</label><input data-a="unit" value="${esc(a.unit)}"></div><div class="field"><label>Measurement mode</label><select data-a="mode"><option value="wall" ${a.mode==='wall'?'selected':''}>Wall L × H</option><option value="ceiling" ${a.mode==='ceiling'?'selected':''}>Ceiling L × W</option><option value="linear" ${a.mode==='linear'?'selected':''}>Linear metre</option><option value="each" ${a.mode==='each'?'selected':''}>Each</option><option value="manual" ${a.mode==='manual'?'selected':''}>Manual quantity</option></select></div><div class="field"><label>Base labour hours / unit</label><input data-a="labour" type="number" min="0" step="0.01" value="${num(a.labour)}"></div></div><div class="field" style="margin-top:10px"><label>Customer description</label><textarea data-a="description">${esc(a.description||'')}</textarea></div><h3 style="margin-top:12px">Material recipe</h3><div>${(a.recipe||[]).map(r=>recipeRow(a,r)).join('')}</div><button type="button" class="btn secondary" data-addrecipe="${a.id}" style="margin-top:8px">+ Recipe material</button><button type="button" class="btn danger" data-delassembly="${a.id}" style="margin-top:8px">Delete preset</button></div></details>`).join('');
+ $('#assemblySettings').querySelectorAll('[data-a]').forEach(x=>x.addEventListener('change',e=>{const a=state.assemblies.find(z=>z.id===e.target.closest('[data-aid]').dataset.aid);const k=e.target.dataset.a;a[k]=k==='labour'?num(e.target.value):e.target.value;save();renderWork();renderAll()}));$('#assemblySettings').querySelectorAll('[data-r]').forEach(x=>x.addEventListener('change',e=>{const box=e.target.closest('[data-aid]'),a=state.assemblies.find(z=>z.id===box.dataset.aid),row=e.target.closest('[data-rid]'),r=a.recipe.find(z=>z.id===row.dataset.rid),k=e.target.dataset.r;r[k]=k==='factor'?num(e.target.value):e.target.value;save();renderAll()}));$('#assemblySettings').querySelectorAll('[data-delrecipe]').forEach(b=>b.addEventListener('click',()=>{const box=b.closest('[data-aid]'),a=state.assemblies.find(z=>z.id===box.dataset.aid);a.recipe=a.recipe.filter(r=>r.id!==b.dataset.delrecipe);save();renderSettings();renderAll()}));$('#assemblySettings').querySelectorAll('[data-addrecipe]').forEach(b=>b.addEventListener('click',()=>{const a=state.assemblies.find(z=>z.id===b.dataset.addrecipe);a.recipe.push(R(state.materials[0]?.id||'',0,'qty'));save();renderSettings()}));$('#assemblySettings').querySelectorAll('[data-delassembly]').forEach(b=>b.addEventListener('click',()=>{if(!confirm('Delete this work preset?'))return;state.assemblies=state.assemblies.filter(a=>a.id!==b.dataset.delassembly);state.job.items=state.job.items.filter(i=>i.assemblyId!==b.dataset.delassembly);save();renderSettings();renderWork();renderAll()}))}
+function recipeRow(a,r){return `<div class="recipe-row" data-rid="${r.id}"><div class="span2"><select data-r="materialId">${state.materials.map(m=>`<option value="${m.id}" ${m.id===r.materialId?'selected':''}>${esc(m.name)}</option>`).join('')}</select></div><div><label class="mini">Units required</label><input data-r="factor" type="number" min="0" step="0.001" value="${num(r.factor)}"></div><div><label class="mini">Per basis</label><select data-r="basis"><option value="qty" ${r.basis==='qty'?'selected':''}>Quoted qty</option><option value="length" ${r.basis==='length'?'selected':''}>Input length</option><option value="perimeter" ${r.basis==='perimeter'?'selected':''}>Perimeter</option><option value="count" ${r.basis==='count'?'selected':''}>Count</option></select></div><button type="button" class="btn ghost danger-text" data-delrecipe="${r.id}">×</button></div>`}
+function bindSettings(){const map=[['sBusiness','business','text'],['sCurrency','currency','text'],['sLabourRate','labourRate','num'],['sHoursDay','hoursDay','num'],['sHelperDay','helperDay','num'],['sMargin','margin','num'],['sOverhead','overhead','num'],['sMinJob','minJob','num'],['sDeposit','deposit','num'],['sValidity','validity','text']];map.forEach(([id,k,t])=>$('#'+id).addEventListener('change',e=>{state.settings[k]=t==='num'?num(e.target.value):e.target.value;save();renderAll()}));$('#sApplyMin').addEventListener('change',e=>{state.settings.applyMin=e.target.checked;save();renderAll()})}
+function addMaterial(){state.materials.push({id:uid(),name:'New material',category:'Other',unit:'each',size:'',price:0,supplier:'',type:'User price / supplier quote',source:'Added by user',round:true});save();renderSettings()}
+function addAssembly(){state.assemblies.push({id:uid(),name:'Custom work item',unit:'m²',mode:'manual',labour:0,description:'',recipe:[]});save();renderSettings()}
+function saveCurrentQuote(){const snap=quoteExport();snap.savedAt=new Date().toISOString();const idx=state.saved.findIndex(x=>x.job.id===state.job.id);if(idx>=0)state.saved[idx]=snap;else state.saved.unshift(snap);save();alert('Quote saved locally.')}
+function renderSaved(){const el=$('#savedQuotes');if(!state.saved.length){el.innerHTML='<div class="empty">No saved quotes yet.</div>';return}el.innerHTML=state.saved.map((q,i)=>`<div class="work-item"><div class="row"><div class="grow"><div class="work-title">${esc(q.job.clientName||q.job.quoteRef)}</div><div class="work-meta">${esc(q.job.quoteRef)} · ${esc(q.job.site||'')} · ${fmt(q.calculation.sell)}</div></div><button class="btn secondary" data-load="${i}">Load</button><button class="btn ghost danger-text" data-delsaved="${i}">×</button></div></div>`).join('');el.querySelectorAll('[data-load]').forEach(b=>b.addEventListener('click',()=>{const q=state.saved[num(b.dataset.load)];state.job=structuredClone(q.job);save();syncJobInputs();renderWork();renderAll();page('calcPage')}));el.querySelectorAll('[data-delsaved]').forEach(b=>b.addEventListener('click',()=>{state.saved.splice(num(b.dataset.delsaved),1);save();renderSaved()}))}
+function mergeQuestionnaire(data){if(data.business?.name)state.settings.business=data.business.name;if(data.business?.currency)state.settings.currency=data.business.currency;if(data.labour?.daysPerMonth&&data.labour?.productiveHoursPerDay&&data.labour?.targetIncome&&!data.labour?.currentHourlyRate)state.settings.labourRate=Math.round(data.labour.targetIncome/(data.labour.daysPerMonth*data.labour.productiveHoursPerDay));if(data.labour?.currentHourlyRate)state.settings.labourRate=num(data.labour.currentHourlyRate);if(data.labour?.productiveHoursPerDay)state.settings.hoursDay=num(data.labour.productiveHoursPerDay);if(data.labour?.helperDayCost)state.settings.helperDay=num(data.labour.helperDayCost);if(data.labour?.minimumJobCharge!=null)state.settings.minJob=num(data.labour.minimumJobCharge);if(data.overheads?.targetMargin!=null)state.settings.margin=num(data.overheads.targetMargin);if(data.quote?.depositPercent!=null)state.settings.deposit=num(data.quote.depositPercent);if(data.business?.quoteValidity)state.settings.validity=data.business.quoteValidity;if(data.materialsPolicy?.defaultBoardWaste!=null)state.settings.boardWaste=num(data.materialsPolicy.defaultBoardWaste);if(data.materialsPolicy?.defaultFrameWaste!=null)state.settings.frameWaste=num(data.materialsPolicy.defaultFrameWaste);if(Array.isArray(data.materials)){for(const im of data.materials){if(!im.price)continue;const n=String(im.name||'').toLowerCase();const m=state.materials.find(x=>x.name.toLowerCase().includes(n)||n.includes(x.name.toLowerCase()));if(m){m.price=num(im.price);m.supplier=im.supplier||m.supplier;m.type='User price / supplier quote';m.source='Imported from setup JSON'}}}save();renderSettings();renderAll();alert('Configuration imported and merged.')}
+
+$('#addWorkBtn').addEventListener('click',addWork);$('#viewQuoteBtn').addEventListener('click',()=>page('printPage'));$('#saveQuoteBtn').addEventListener('click',saveCurrentQuote);$('#printBtn').addEventListener('click',()=>window.print());$('#copyQuoteBtn').addEventListener('click',copyQuote);$('#exportQuoteBtn').addEventListener('click',()=>download((state.job.quoteRef||'quote')+'.json',JSON.stringify(quoteExport(),null,2)));$('#exportMaterialsBtn').addEventListener('click',()=>download((state.job.quoteRef||'quote')+'_materials.csv',materialsCsv(),'text/csv'));$('#addMaterialBtn').addEventListener('click',addMaterial);$('#addAssemblyBtn').addEventListener('click',addAssembly);$('#exportConfigBtn').addEventListener('click',()=>download('gypsum_calculator_settings_'+TODAY()+'.json',JSON.stringify({version:'1.0',tool:'Gypsum Costing & Quote Calculator Settings',settings:state.settings,materials:state.materials,assemblies:state.assemblies},null,2)));$('#importSetupBtn').addEventListener('click',()=>$('#importSetupFile').click());$('#importSetupFile').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(d.settings&&d.materials&&d.assemblies){state.settings={...state.settings,...d.settings};state.materials=d.materials;state.assemblies=d.assemblies;save();renderSettings();renderAll();alert('Calculator settings imported.')}else mergeQuestionnaire(d)}catch(err){alert('Could not read that JSON file.')}};r.readAsText(f);e.target.value=''});$('#resetBtn').addEventListener('click',()=>{if(!confirm('Reset calculator settings, current job and saved quotes to starter defaults?'))return;localStorage.removeItem('gypsumCalcV2');localStorage.removeItem('gypsumCalcV1');location.reload()});
+bindJobInputs();bindSettings();bindPlans();syncJobInputs();renderWork();renderSettings();renderAll();renderSaved();
+})();
+</script>
+
+<script>
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./sw.js').catch(function () {});
+  });
+}
+</script>
+</body>
+</html>
